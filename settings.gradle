@@ -1,0 +1,56 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url './myplugin/build/maven-repo' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+//        maven { url './myplugin/build/maven-repo' }
+    }
+}
+rootProject.name = "KotlinJetpack"
+include ':app'
+include ':likeviewlibrary'
+include ':shinebuttonlib'
+include ':httplib'
+include ':linkageonelibrary'
+include ':linkage-recyclerview'
+include ':myplugin'
+
+
+//---------------------------------- gradle 配置学习 ----------------------------------
+
+// Initialization(初始化)阶段
+
+println("---Gradle: 开始初始化")
+gradle.settingsEvaluated {
+//    当settings.gradle被评估(evaluate)完毕，此时已经有初始化过的Settings对象
+    println("---Gradle: settingsEvaluated Settings 对象评估完毕")
+}
+
+gradle.projectsLoaded {
+    println("---Gradle：projectsLoaded 准备加载 Project 对象了")
+//    projectsLoaded 回调时已经根据settings.gradle创建了各个模块的 Project 对象，我们可以引用 Project 对象从而设置一些 hook
+//    此时还属于Initialization(初始化)阶段，还没到Configuration(配置)阶段，所以 Project 对象只包含了项目的基本信息，是拿不到build.gradle里面的配置信息的，
+//    所以此阶段可用对象是Settings，Gradle对象是任何阶段都可用的
+    gradle.allprojects {
+        beforeEvaluate {
+            println("---Gradle：setting Projec beforeEvaluate Project 开始评估，对象是 = " + project.name)
+        }
+        afterEvaluate {
+            println("---Gradle：setting Projec afterEvaluate Project 评估完毕，对象是 = " + project.name)
+        }
+    }
+}
+
+// Configuration(配置)阶段
+// 可以拿到所有参与构建的项目的配置，首先会执行 root project下的build.gradle，然后是 module project下的build.gradle
+// 此时可以Hook Project 对象的执行前和执行后，因为是Project对象，就不能写在settings.gradle里面了，要写在build.gradle里面

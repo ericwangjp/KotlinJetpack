@@ -1,0 +1,18 @@
+#[versions]
+#在 versions 代码块中，定义用于保存依赖项和插件版本的变量。您可以在后续代码块（libraries 和 plugins 代码块）中使用这些变量
+#[libraries]
+#在 libraries 代码块中，定义依赖项
+#[plugins]
+#在 plugins 代码块中，定义插件
+
+[versions]
+androidGradlePlugin="7.3.0"
+activity-ktx = "1.7.2"
+fragment-ktx = "1.6.1"
+
+[libraries]
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
+fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment-ktx" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

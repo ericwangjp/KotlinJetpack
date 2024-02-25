@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Transition 定义动画过程中的开始状态和结束状态 -->
+    <!-- constraintSetStart 动画开始状态的布局文件引用 -->
+    <!-- constraintSetEnd 动画结束状态的布局文件引用 -->
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/button" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/button" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@layout/activity_motion_layout4_end"
+        app:constraintSetStart="@layout/activity_motion_layout4_start"
+    app:duration="1000">
+        <!--OnClick 用于处理用户点击事件 -->
+        <!--targetId 设置触发点击事件的组件 -->
+        <!--clickAction 设置点击操作的响应行为，这里是使动画过渡到结束状态 -->
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/button" />
+
+    </Transition>
+</MotionScene>

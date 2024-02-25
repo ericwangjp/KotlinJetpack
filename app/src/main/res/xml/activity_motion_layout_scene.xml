@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@id/btn_one" />
+
+        <OnSwipe
+            motion:dragDirection="dragEnd"
+            motion:touchAnchorSide="end"
+            motion:touchAnchorId="@id/tv_drag" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                motion:motionTarget="@+id/tv_one"
+                motion:framePosition="20"
+                motion:pathMotionArc="startVertical"
+                motion:keyPositionType="deltaRelative" />
+
+            <KeyPosition
+                motion:motionTarget="@+id/tv_two"
+                motion:framePosition="40"
+                motion:keyPositionType="deltaRelative" />
+
+            <KeyCycle
+                android:alpha="0.5"
+                android:scaleY="1.2"
+                android:scaleX="1.2"
+                motion:framePosition="51"
+                motion:motionTarget="@+id/tv_one"
+                motion:waveOffset="2"
+                motion:wavePeriod="1"
+                motion:waveShape="sin" />
+
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/btn_one"
+            android:layout_width="100dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="50dp"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_drag"
+            android:layout_width="100dp"
+            android:layout_height="66dp"
+            motion:layout_constraintTop_toBottomOf="@id/tv_one"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/btn_one"
+            android:layout_width="150dp"
+            android:layout_height="166dp"
+            android:layout_marginBottom="50dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintRight_toRightOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_drag"
+            android:layout_width="150dp"
+            android:layout_height="166dp" />
+
+        <Constraint
+            android:id="@+id/tv_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintRight_toRightOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintLeft_toLeftOf="parent" />
+    </ConstraintSet>
+</MotionScene>

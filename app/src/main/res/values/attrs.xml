@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomCircleProgress">
+        <attr name="circleWidth" format="dimension" />
+        <attr name="circleColor" format="color" />
+        <attr name="bgCircleWidth" format="dimension" />
+        <attr name="bgCircleColor" format="color" />
+        <attr name="isAnimate" format="boolean" />
+        <attr name="animDuration" format="integer" />
+        <attr name="valueText" format="string" />
+        <attr name="maxValue" format="float" />
+        <attr name="startAngle" format="float" />
+        <attr name="sweepAngle" format="float" />
+        <attr name="valueTextSize" format="dimension" />
+        <attr name="valueTextColor" format="color" />
+        <attr name="hint" format="string" />
+        <attr name="hintSize" format="dimension" />
+        <attr name="hintColor" format="color" />
+        <attr name="gradientColor" format="dimension" />
+        <attr name="isGradient" format="boolean" />
+        <attr name="shadowSize" format="float" />
+        <attr name="shadowColor" format="color" />
+        <attr name="isShowShadow" format="boolean" />
+        <attr name="progress" format="integer" />
+    </declare-styleable>
+</resources>

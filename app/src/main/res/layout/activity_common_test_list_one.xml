@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CommonTestListOneActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btn_file_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="文件下载" />
+
+        <Button
+            android:id="@+id/btn_sys_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="系统定位" />
+
+        <Button
+            android:id="@+id/btn_text_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="文字动画" />
+
+        <Button
+            android:id="@+id/btn_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="通知" />
+
+        <Button
+            android:id="@+id/btn_custom_spider_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自定义蜘蛛网" />
+
+        <Button
+            android:id="@+id/btn_dependency_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="依赖视图" />
+
+        <Button
+            android:id="@+id/btn_shape_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="带形状imageview" />
+
+        <Button
+            android:id="@+id/btn_linkage_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="联动列表" />
+
+        <Button
+            android:id="@+id/btn_fold_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="折叠动画" />
+
+        <Button
+            android:id="@+id/btn_group_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="列表分组" />
+
+        <Button
+            android:id="@+id/btn_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 文本tag" />
+
+        <Button
+            android:id="@+id/btn_like"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点赞特效" />
+
+        <Button
+            android:id="@+id/btn_camera_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="相机拍照" />
+
+        <Button
+            android:id="@+id/btn_google_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Google 扫码器" />
+
+    </LinearLayout>
+
+</ScrollView>

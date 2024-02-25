@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.commonTest.FileDownloadDemoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_progress_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="下载进度"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_download_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp" />
+
+        <com.example.kotlinjetpack.view.HorizontalProgressWithDrawable
+            android:id="@+id/progress_drawable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:max="100"
+            android:progress="0" />
+
+        <Button
+            android:id="@+id/btn_start_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="开始下载" />
+
+        <TextView
+            android:id="@+id/tv_progress_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="进度条"
+            android:textColor="@color/teal_700"
+            android:textSize="16sp" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@drawable/progress_rotate" />
+
+        <ProgressBar
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="20"
+            android:progressDrawable="@drawable/progress_common_horizontal"
+            android:secondaryProgress="50" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="20"
+            android:progressDrawable="@drawable/progress_horizontal_drawable" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="开始" />
+
+
+        <Button
+            android:id="@+id/btn_start_progress_anim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="启动进度动画" />
+
+        <com.example.kotlinjetpack.view.CustomCircleProgress
+            android:id="@+id/custom_progress"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            app:bgCircleWidth="15dp"
+            app:circleColor="@color/ps_color_fa632d"
+            app:circleWidth="20dp"
+            app:hint="当前进度"
+            app:hintSize="20sp"
+            app:isAnimate="true"
+            app:isShowShadow="true"
+            app:progress="80"
+            app:shadowColor="@color/cardview_dark_background"
+            app:valueText="60"
+            app:valueTextColor="@color/purple_500"
+            app:valueTextSize="30sp" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="15dp"
+        android:height="5dp"
+        android:gravity="center">
+        <shape>
+            <corners android:radius="5dp" />
+            <!--        color在tablayout中无效，使用tabIndicatorColor-->
+            <solid android:color="@color/purple_200" />
+        </shape>
+    </item>
+
+</layer-list>

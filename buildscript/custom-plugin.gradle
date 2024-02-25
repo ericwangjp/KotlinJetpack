@@ -1,0 +1,12 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        classpath 'com.example.plugin:cutom-plugin:1.0.0'
+    }
+}

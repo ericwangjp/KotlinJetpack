@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.commonTest.DependencyViewActivity">
+
+    <com.example.kotlinjetpack.view.DependentView
+        android:id="@+id/dependent_view"
+        android:background="#113351"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:id="@+id/tv_dependency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我是跟随者"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:background="#785ff1"
+        app:layout_behavior="com.example.kotlinjetpack.behavior.DependBehavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

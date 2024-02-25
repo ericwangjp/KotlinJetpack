@@ -1,0 +1,144 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <title>Untitled Document</title>
+    <style>
+        #picture_div {
+            margin-top: 50px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .picture-video {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .picture-canvas {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            width: 360px;
+            height: 360px;
+            transform: translate(-50%, 0);
+            cursor: pointer;
+            z-index: 101;
+            display: inline-block;
+        }
+
+        #headSculpture {
+            position: absolute;
+            z-index: 100;
+            top: 50%;
+            left: 50%;
+            width: 220px;
+            transform: translate(-50%, -50%);
+            vertical-align: middle;
+        }
+
+        #snap {
+            background: #1E9FFF;
+            display: inline-block;
+            height: 38px;
+            line-height: 38px;
+            padding: 0 18px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 14px;
+            border: 0;
+            border-radius: 2px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+    </style>
+    <script>
+        //开启摄像头
+        var MediaStreamTrack;
+        var isPhotograph = true;
+        function getMedia() {
+            let constraints = {
+                video: { width: 360, height: 360 },
+                audio: false,
+            };
+            //获得video摄像头区域
+            let video = document.getElementById("video");
+            //这里介绍新的方法，返回一个 Promise对象
+            // 这个Promise对象返回成功后的回调函数带一个 MediaStream 对象作为其参数
+            // then()是Promise对象里的方法
+            // then()方法是异步执行，当then()前的方法执行完后再执行then()内部的程序
+            // 避免数据没有获取到
+            let promise = navigator.mediaDevices.getUserMedia(constraints);
+            promise.then(function (MediaStream) {
+                MediaStreamTrack = typeof MediaStream.stop === 'function' ? MediaStream : MediaStream.getTracks()[1];
+                video.srcObject = MediaStream;
+                video.play();
+                isPhotograph = false
+            });
+        }
+        //拍照
+        function takePhoto() {
+            alert("开始拍照")
+            if (isPhotograph) {
+                getMedia();
+                clearCanvas();
+                isPhotograph = false;
+            } else {
+                //获得Canvas对象
+                let video = document.getElementById("video");
+                let canvas = document.getElementById("canvas");
+                let ctx = canvas.getContext('2d');
+                ctx.drawImage(video, 0, 0, 360, 360);
+                MediaStreamTrack && MediaStreamTrack.stop();
+                imgData = document.getElementById("canvas").toDataURL("image/jpeg");
+                isPhotograph = true;
+            }
+        }
+
+
+        /**
+         * @description 重置canvas（清除照片）
+         * @version 1.0
+         * @returns
+         */
+        function clearCanvas() {
+            var c = document.getElementById("canvas");
+            var cxt = c.getContext("2d");
+            c.height = c.height;
+        }
+
+        window.onload = function(){
+            document.getElementById("snap").addEventListener("click", takePhoto);
+        }
+
+    </script>
+</head>
+<!--显示头像-->
+<div class="show-picture" id="picture_div">
+    <video id="video" class="picture-video" width="360" height="360" autoplay></video>
+    <canvas id="canvas" class="picture-canvas" width="360" height="360"></canvas>
+    <img id="headSculpture">
+    <button type="button" class="layui-btn layui-btn-normal snap" id="snap">拍照</button>
+</div>
+<div>
+    <input type="file" capture="camera" accept="image/*">
+</div>
+<div>
+    备注：
+    <input type="file" capture="camera">
+</div>
+<div>
+    <a href="weixin://dl/business/?t=8rQJdgj">打开微信-小程序1</a>
+    <a href="weixin://dl/business/?ticket=la0041f2cedf9630c9c7cc8c8715ac0c6">打开微信-小程序2</a>
+
+</div>
+
+<body>
+</body>
+
+</html>

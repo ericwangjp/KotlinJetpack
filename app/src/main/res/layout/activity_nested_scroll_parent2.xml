@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.nestScroll.NestedScrollParentActivity">
+
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:id="@+id/nested_scroll_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/nested_parent_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/rlayout_anim"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="200dp"-->
+<!--                android:background="#a1dafa">-->
+
+<!--            </RelativeLayout>-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rv_list"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="1" />-->
+
+<!--        </LinearLayout>-->
+<!--    </androidx.core.widget.NestedScrollView>-->
+
+        <com.example.kotlinjetpack.view.StickyNavScrollParent
+            android:id="@+id/nested_parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlayout_anim"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#a1dafa">
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.example.kotlinjetpack.view.StickyNavScrollParent>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

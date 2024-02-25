@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CommonTestListTwoActivity">
+
+    <Button
+        android:id="@+id/btn_start_google_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google 扫码器扫码" />
+
+    <Button
+        android:id="@+id/btn_start_mlkit_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google ML Kit 扫码" />
+
+    <Button
+        android:id="@+id/btn_start_mlkit_component_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google ML Kit 套件扫码" />
+
+    <TextView
+        android:id="@+id/tv_scan_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

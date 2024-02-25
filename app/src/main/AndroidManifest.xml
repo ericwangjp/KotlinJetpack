@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.kotlinjetpack">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- android 13 通知权限 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_MEDIA_STORAGE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <queries>
+        <package android:name="${applicationId}" />
+
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE" />
+        </intent>
+
+        <provider android:authorities="test" />
+    </queries>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.KotlinJetpack"
+        tools:replace="android:theme">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".activity.customview.CustomViewOneActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.scancode.CameraXLivePreviewActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.commonTest.GoogleScanCodeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.cameraxmlkit.CameraXScanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.commonTest.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.CameraDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.RvBehaviorLinkageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.NestedScrollBehaviorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.linkageScroll.ScrollTabBarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.linkageScroll.CollapseExpandHeadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.NestedScrollParent3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.NestedScrollParent2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.NestedScrollParentBehaviorHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.linkageScroll.LinkageScrollHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.linkageScroll.ScrollLinkageList2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CustomViewListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.linkageScroll.ScrollLinkageListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.linkageScroll.NestListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.linkageScroll.ScrollFoldAnimActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.linkageScroll.LinkageListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.ShapeImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.DependencyViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.customview.CustomSpiderViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.TextAnimActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.FileDownloadDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.LocationDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.NotificationDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.FlowLearnListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CommonTestListTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.flowCoroutine.FlowLearnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.ResultCallbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.MotionLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.CommonTestListOneActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.commonTest.PicSelectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.DianZanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.WaterfallFlowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.TagTextViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.FlexBoxLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.NestedScrollParentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.commonTest.DragViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.NestBehaviorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.BehaviorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.nestScroll.NestedScrollViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

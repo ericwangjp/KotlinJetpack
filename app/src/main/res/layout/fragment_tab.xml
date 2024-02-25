@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.TabFragment">
+
+    <TextView
+        android:id="@+id/tv_tab_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/hello_blank_fragment"
+        android:textSize="25sp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_common"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="效果测试系列一" />
+
+            <Button
+                android:id="@+id/btn_common_test_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="效果测试系列二" />
+
+            <Button
+                android:id="@+id/btn_nested_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nested scroll parent 和 behavior" />
+
+            <Button
+                android:id="@+id/btn_flow_learn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="kotlin flow 学习" />
+
+            <Button
+                android:id="@+id/btn_custom_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义view学习" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
+                app:fadeDuration="2000"
+                app:failureImage="@mipmap/ic_launcher"
+                app:failureImageScaleType="fitCenter"
+                app:placeholderImage="@drawable/icon_pic_default"
+                app:placeholderImageScaleType="fitCenter"
+                app:progressBarAutoRotateInterval="5000"
+                app:progressBarImage="@drawable/icon_add"
+                app:progressBarImageScaleType="fitCenter"
+                app:retryImage="@drawable/ic_retry"
+                app:retryImageScaleType="fitCenter"
+                app:roundBottomLeft="false"
+                app:roundBottomRight="true"
+                app:roundTopLeft="true"
+                app:roundTopRight="false"
+                app:roundedCornerRadius="30dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

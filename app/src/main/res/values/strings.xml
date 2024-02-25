@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">KotlinJetpack</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_san_wen">有什么人能用绿竹作弓矢，射入云空，永不落下？我之想象，犹如长箭，向云空射去，去即不返。长箭所注，在碧蓝而明静之广大虚空。
+
+明智者若善用其明智，即可从此云空中，读示一小文，文中有微叹与沉默，色与香，爱和怨。无著者姓名。无年月。无故事。无……然而内容极柔美。虚空静寂，读者灵魂中如有音乐。虚空明蓝，读者灵魂上却光明净洁。
+
+大门前石板路有一个斜坡，坡上有绿树成行，长干弱枝，翠叶积叠，如翠等，如羽葆，如旗帜。常有山灵，秀腰白齿，往来其间。遇之者即喑哑。爱能使人喑哑——一种语言歌呼之死亡。“爱与死为邻”。
+
+然抽象的爱，亦可使人超生。爱国也需要生命，生命力充溢者方能爱国。至如阉寺性的人，实无所爱，对国家，貌作热诚，对事，马马虎虎，对人，毫无情感，对理想，异常吓怕。也娶妻生子，治学问教书，做官开会，然而精神状态上始终是个阉人。与阉人说此，当然无从了解。
+
+夜梦极可怪。见一淡绿百合花，颈弱而花柔，花身略有斑点青渍，倚立门边微微动摇。在不可知的地方好像有极熟悉的声音在招呼：
+
+“你看看好，应当有一粒星子在花中。仔细看看。”
+
+于是伸手触之。花微抖，如有所怯。亦复微笑，如有所恃。因轻轻摇触那个花柄，花蒂，花瓣。近花处几片叶子全落了。
+
+如闻叹息，低而分明。
+
+雷雨刚过。醒来后闻远处有狗吠，吠声如豹。半迷糊中卧床上默想，觉得惆怅之至。因百合花在门边动摇，被触时微抖或微笑，事实上均不可能！
+
+起身时因将经过记下，用半浮雕手法，如玉工处理一片玉石，琢刻割磨。完成时犹如一壁炉上小装饰。精美如瓷器，素朴如竹器。
+
+一般人喜用教育身份来测量一个人道德程度。尤其是有关乎性的道德。事实上这方面的事情，正复难言。有些人我们应当嘲笑的，社会却常常给以尊敬，如阉寺。有些人我们应当赞美的，社会却认为罪恶，如诚实。多数人所表现的观念，照例是与真理相反的。多数人都乐于在一种虚伪中保持安全或自足心境。因此我焚了那个稿件。我并不畏惧社会，我厌恶社会，厌恶伪君子，不想将这个完美诗篇，被伪君子眼目所污渎。
+
+百合花极静。在意象中尤静。
+
+山谷中应当有白中微带浅蓝色的百合花，弱颈长蒂，无语如语，香清而淡，躯干秀拔。花粉作黄色，小叶如翠珰。
+
+法朗士曾写一《红百合》故事，述爱欲在生命中所占地位，所有形式，以及其细微变化。我想写一《绿百合》，用形式表现意象。
+
+【赏析】
+
+很多人步履匆匆，忙忙碌碌，他们或沉迷于功名利禄，或不惜一切代价追求物质财富，在追逐功名财富的时候烦恼丛生，却唯独忘了生命中那些最让人温暖，最让人感动的瞬间！
+
+其实生活中本没有那么多烦恼，一切只不过是庸人自扰。只要我们稍微停下脚步，就可以更好地珍惜生命本原的美丽，不为爱欲所炫目，不为污秽所恶心，永远正确看待生命，永远那么透明地看。那时候，你将发现，在人生的幽僻处、细小处，都闪耀着光芒。
+
+沈从文先生用优美的笔触展现了他对生命深深的思索。该文写于20世纪40年代，今天看来仍鲜活而不失色泽，精辟而不加粉饰。</string>
+    <string name="menu_item_settings" translatable="false">设置</string>
+    <string name="pref_category_key_camera" translatable="false">pckc</string>
+    <string name="pref_key_rear_camera_preview_size" translatable="false">rcpvs</string>
+    <string name="pref_key_rear_camera_picture_size" translatable="false">rcpts</string>
+    <string name="pref_key_front_camera_preview_size" translatable="false">fcpvs</string>
+    <string name="pref_key_front_camera_picture_size" translatable="false">fcpts</string>
+    <string name="pref_key_camerax_rear_camera_target_resolution" translatable="false">crctas</string>
+    <string name="pref_key_camerax_front_camera_target_resolution" translatable="false">cfctas</string>
+    <string name="pref_screen" translatable="false">ps</string>
+    <string name="pref_key_enable_auto_zoom" translatable="false">eaz</string>
+    <string name="pref_title_enable_auto_zoom" translatable="false">开启自动缩放</string>
+    <string name="pref_key_segmentation_raw_size_mask" translatable="false">srsm</string>
+    <string name="pref_screen_title_live_preview" translatable="false">预览设置</string>
+    <string name="pref_screen_title_still_image" translatable="false">静态图片设置</string>
+</resources>

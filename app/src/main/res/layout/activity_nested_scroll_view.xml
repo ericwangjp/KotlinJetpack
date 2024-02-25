@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.example.kotlinjetpack.view.ParentNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_200"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/firstView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@color/teal_700" />
+
+    <TextView
+        android:id="@+id/tv_stick_head"
+        android:textSize="20sp"
+        android:text="stick header"
+        android:gravity="center"
+        android:padding="15dp"
+        android:layout_below="@id/firstView"
+        android:background="@color/teal_200"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.example.kotlinjetpack.view.ChildNestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_stick_head"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_san_wen" />
+
+    </com.example.kotlinjetpack.view.ChildNestedScrollView>
+
+</com.example.kotlinjetpack.view.ParentNestedScrollView>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".activity.commonTest.TextAnimActivity">
+
+    <TextView
+        android:id="@+id/tv_animation_text"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:text="文字动态展示效果"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_animation"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/teal_700"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:text="一段文字描述一件事情"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_change_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="改变文字" />
+
+    <Button
+        android:id="@+id/btn_start_animator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="开始变化" />
+
+</LinearLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.commonTest.PicSelectActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_get_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="相册选择图片" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_album_one"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:fadeDuration="2000"
+                app:failureImage="@mipmap/ic_launcher"
+                app:failureImageScaleType="fitCenter"
+                app:layout_constraintTop_toTopOf="parent"
+                app:placeholderImage="@drawable/icon_pic_default"
+                app:placeholderImageScaleType="fitCenter"
+                app:progressBarAutoRotateInterval="5000"
+                app:progressBarImage="@drawable/icon_add"
+                app:progressBarImageScaleType="fitCenter"
+                app:retryImage="@drawable/ic_retry"
+                app:retryImageScaleType="fitCenter"
+                app:roundBottomLeft="false"
+                app:roundBottomRight="true"
+                app:roundTopLeft="true"
+                app:roundTopRight="false"
+                app:roundedCornerRadius="30dp" />
+
+            <Button
+                android:id="@+id/btn_system_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="打开系统相册" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_img_two"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:fadeDuration="2000"
+                app:failureImage="@mipmap/ic_launcher"
+                app:failureImageScaleType="fitCenter"
+                app:layout_constraintTop_toTopOf="parent"
+                app:placeholderImage="@drawable/icon_pic_default"
+                app:placeholderImageScaleType="fitCenter"
+                app:progressBarAutoRotateInterval="5000"
+                app:progressBarImage="@drawable/icon_add"
+                app:progressBarImageScaleType="fitCenter"
+                app:retryImage="@drawable/ic_retry"
+                app:retryImageScaleType="fitCenter"
+                app:roundBottomLeft="false"
+                app:roundBottomRight="true"
+                app:roundTopLeft="true"
+                app:roundTopRight="false"
+                app:roundedCornerRadius="30dp" />
+
+            <Button
+                android:id="@+id/btn_take_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="拍照" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_img_three"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:fadeDuration="2000"
+                app:failureImage="@mipmap/ic_launcher"
+                app:failureImageScaleType="fitCenter"
+                app:layout_constraintTop_toTopOf="parent"
+                app:placeholderImage="@drawable/icon_pic_default"
+                app:placeholderImageScaleType="fitCenter"
+                app:progressBarAutoRotateInterval="5000"
+                app:progressBarImage="@drawable/icon_add"
+                app:progressBarImageScaleType="fitCenter"
+                app:retryImage="@drawable/ic_retry"
+                app:retryImageScaleType="fitCenter"
+                app:roundBottomLeft="false"
+                app:roundBottomRight="true"
+                app:roundTopLeft="true"
+                app:roundTopRight="false"
+                app:roundedCornerRadius="30dp" />
+
+            <Button
+                android:id="@+id/btn_get_folder_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取专辑列表" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_folder_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_get_album_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取相册列表" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_album_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_get_select_album"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取选择的相册" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

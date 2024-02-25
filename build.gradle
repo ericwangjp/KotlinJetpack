@@ -1,0 +1,129 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+// 这种方式和下面 plugins id 的方式一样，只是名称有区别，不需要 artifactId
+//buildscript {
+//    dependencies {
+//        classpath('com.example.myplugin:dependencies:1.0.0')
+//    }
+//}
+
+plugins {
+//    id 'com.android.application' version '7.3.0' apply false
+    alias(libs.plugins.android.application) apply false
+    id 'com.android.library' version '7.3.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+//    id 'com.example.myplugin' version '1.0.0' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+//------------- 配置学习 ------------
+
+// Configuration(配置)阶段
+
+project.beforeEvaluate {
+    // 通过执行日志发现project.beforeEvaluate方法并没有执行，是因为该 hook 点在执行到 build.gradle 的内容时已经走过了，所以不会生效
+    println("---project：beforeEvaluate Project开始评估，对象是 = " + project.name)
+}
+
+project.afterEvaluate {
+//    此时可以获取到Project对象里面的配置信息了
+    println("---project：afterEvaluate Project评估完毕，对象是 = " + project.name)
+}
+
+// 所有Project对象evaluate完毕之后，会回调gradle.projectsEvaluated
+gradle.projectsEvaluated {
+    println("---Gradle：projectsEvaluated 所有Project对象评估完毕")
+}
+
+// Execution (执行) 阶段
+// TaskActionListener 和 buildFinished 废弃之后 Gradle提供了Build Service的方式来代替
+// build.gradle.kts 中使用实例：
+//abstract class BuildListenerService :
+//BuildService<BuildListenerService.Params>,
+//org.gradle.tooling.events.OperationCompletionListener {
+//
+//    interface Params : BuildServiceParameters
+//
+//    override fun onFinish(event: org.gradle.tooling.events.FinishEvent) {
+//        println("BuildListenerService got event $event")
+//    }
+//}
+//
+//val buildServiceListener = gradle.sharedServices.registerIfAbsent("buildServiceListener", BuildListenerService::class.java) { }
+//
+//abstract class Services @Inject constructor(
+//        val buildEventsListenerRegistry: BuildEventsListenerRegistry
+//)
+//
+//val services = objects.newInstance(Services::class)
+//
+//services.buildEventsListenerRegistry.onTaskCompletion(buildServiceListener)
+
+// Hook Task的执行:
+// 7.3以前可用，7.3之后已经废弃了，并且会导致编译报错，因为在配置缓存的情况下，为了保证无论是否开启配置缓存都一致的API，只好干掉了
+//gradle.addBuildListener(new TaskExecutionListener() {
+//
+//    @Override
+//    void beforeExecute(Task task) {
+//        println("---Gradle：Task beforeExecute---")
+//    }
+//
+//    @Override
+//    void afterExecute(Task task, TaskState taskState) {
+//        println("---Gradle：Task afterExecute---")
+//    }
+//})
+
+// Task是Gradle中最小的构建单元，Action是最小的执行单元
+// 可以添加TaskActionListener来Hook Task Action的执行：
+// 同TaskExecutionListener一样，也被干掉了，且编译报错
+//gradle.addBuildListener(new TaskActionListener() {
+//
+//    @Override
+//    void beforeActions(Task task) {
+//        println("---Gradle：Task beforeActions---")
+//    }
+//
+//    @Override
+//    void afterActions(Task task) {
+//        println("---Gradle：Task afterActions---")
+//    }
+//})
+
+
+// 当所有Task执行完毕，也就意味着构建结束，会回调gradle.buildFinished：
+// 也是已废弃
+gradle.buildFinished {
+    println("---Gradle：buildFinished 构建结束了")
+}
+
+// 除了gradle.xxx这种方式添加hook点之外，还可以用gradle.addListener()的方式，效果一样
+gradle.addListener(new BuildListener() {
+    @Override
+    void beforeSettings(Settings settings) {
+        super.beforeSettings(settings)
+    }
+
+    @Override
+    void settingsEvaluated(Settings settings) {
+
+    }
+
+    @Override
+    void projectsLoaded(Gradle gradle) {
+
+    }
+
+    @Override
+    void projectsEvaluated(Gradle gradle) {
+
+    }
+
+    @Override
+    void buildFinished(BuildResult result) {
+
+    }
+})

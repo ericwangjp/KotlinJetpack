@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.nestScroll.NestBehaviorActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/head_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="这里是head"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_behavior=".behavior.HeadBehavior" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_yellow"
+        app:layout_behavior=".behavior.ScrollRecyclerViewBehavior" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp"
+        android:background="@color/purple_200"
+        android:orientation="horizontal"
+        app:layout_behavior=".behavior.BottomNavigationBehavior">
+
+        <RadioButton
+            android:id="@+id/rbtn_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:gravity="center"
+            android:text="主页"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rbtn_community"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="广场"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/rbtn_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="我的"
+            android:textColor="@color/white" />
+    </RadioGroup>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

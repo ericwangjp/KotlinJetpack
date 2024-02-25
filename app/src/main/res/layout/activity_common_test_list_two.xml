@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CommonTestListTwoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btn_scroll_tab_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="可滚动TabBar" />
+
+        <Button
+            android:id="@+id/btn_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WebView" />
+
+        <Button
+            android:id="@+id/btn_drag_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="拖拽view" />
+
+        <Button
+            android:id="@+id/btn_flex_box_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="flex box 布局" />
+
+        <Button
+            android:id="@+id/btn_waterfall_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="瀑布流" />
+
+        <Button
+            android:id="@+id/btn_take_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="拍照与图片选择" />
+
+        <Button
+            android:id="@+id/btn_motion_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Motion Layout 布局与动画" />
+
+        <Button
+            android:id="@+id/btn_activity_call_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="新 activity 结果回调" />
+    </LinearLayout>
+
+</ScrollView>

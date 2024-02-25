@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_nav_square"
+        android:checked="true"
+        android:icon="@drawable/ic_retry"
+        android:title="广场" />
+    <item
+        android:id="@+id/bottom_nav_community"
+        android:checked="false"
+        android:icon="@drawable/icon_add"
+        android:title="社区" />
+    <item
+        android:id="@+id/bottom_nav_mine"
+        android:checked="false"
+        android:icon="@drawable/ic_like_gray"
+        android:title="我的" />
+</menu>

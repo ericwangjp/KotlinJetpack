@@ -1,0 +1,208 @@
+// 自定义 plugin 扩展 可以是接口，也可以是类
+//interface FqyCustomPluginExtension {
+//    Property<String> getTitle()
+//}
+
+// 相比于上面接口定义的示例，少了Property对象的.get()，也去掉了设置的默认值的环节，如果想要的话，在类对象里定义setter/getter方法就行
+class FqyCustomPluginExtension {
+    String title
+    int chapter
+    SubExtension subExtension
+
+    FqyCustomPluginExtension(Project project) {
+        subExtension = project.extensions.create('subExtension', SubExtension.class)
+    }
+}
+
+class SubExtension {
+    String author
+}
+
+// gradle plugin 自定义
+class FqyCustomPlugin implements Plugin<Project> {
+
+    @Override
+    void apply(Project project) {
+        println("==这里是自定义插件:${project.name} - ${this.class.name} ==")
+        def extension = project.extensions.create("fqyExtension", FqyCustomPluginExtension)
+        project.tasks.register("fqyCustomPluginTask") { task ->
+            task.doLast {
+                println("==插件：${this.class.name} 内的task：${task.name}")
+//                println(extension.title.get())
+                println("title = ${extension.title}")
+                println("chapter = ${extension.chapter}")
+                println("author = ${extension.subExtension.author}")
+            }
+        }
+    }
+}
+
+plugins {
+//    id 'com.android.application'
+    alias libs.plugins.android.application
+    id 'org.jetbrains.kotlin.android'
+//    id 'com.example.myplugin'
+}
+// 引入未发布的自定义插件
+apply plugin: FqyCustomPlugin
+// 自定义插件扩展使用
+//fqyExtension.title = "aaaa"
+//project.extensions.getByName("fqyExtension").title.convention("配置参数")
+fqyExtension {
+    title = "自定义参数"
+    chapter =8
+    subExtension {
+        author = "fqy"
+    }
+}
+
+//printDependencies {
+//    enable = true
+//}
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.kotlinjetpack"
+        minSdk 21
+        targetSdk 34
+        versionCode 2
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main {}
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    def kotlinx_coroutines_version = "1.6.4"
+//    协程Android支持库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version"
+    // 协程核心库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
+    // 协程Java8支持库
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:$kotlinx_coroutines_version"
+
+
+    def lifecycle_version = "2.6.2"
+    def arch_version = "2.1.0"
+
+    // activity、fragment 扩展库
+    implementation libs.activity.ktx
+    implementation libs.fragment.ktx
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // ViewModel utilities for Compose
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    // Annotation processor
+//    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // optional - helpers for implementing LifecycleOwner in a Service
+//    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+
+    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+//    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+
+    // optional - ReactiveStreams support for LiveData
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+
+    // optional - Test helpers for LiveData
+//    testImplementation "androidx.arch.core:core-testing:$arch_version"
+
+
+//    fresco
+    implementation 'com.facebook.fresco:fresco:2.6.0'
+    // For animated GIF support
+    implementation 'com.facebook.fresco:animated-gif:2.6.0'
+    // For WebP support, including animated WebP
+    implementation 'com.facebook.fresco:animated-webp:2.6.0'
+    implementation 'com.facebook.fresco:webpsupport:2.6.0'
+    implementation 'com.facebook.fresco:animated-base:2.6.0'
+
+//    flex box layout
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+//    点赞动画
+    implementation project(":likeviewlibrary")
+//    implementation 'com.github.MasayukiSuda:EasingInterpolator:v1.3.2'
+    implementation project(":shinebuttonlib")
+//    implementation 'com.sackcentury:shinebutton:1.0.0'
+//    PictureSelector 3.0
+    implementation 'io.github.lucksiege:pictureselector:v3.10.0'
+    implementation 'io.github.lucksiege:compress:v3.10.0'
+    implementation 'io.github.lucksiege:ucrop:v3.10.0'
+//    implementation 'io.github.lucksiege:camerax:v3.10.0'
+
+//    PermissionX
+    implementation 'com.guolindev.permissionx:permissionx:1.6.4'
+
+//    implementation 'com.kunminx.linkage:linkage-recyclerview:2.7.0'
+    implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
+    implementation 'com.github.liangjingkanji:BRV:1.5.2'
+    implementation project(':linkageonelibrary')
+    implementation project(':linkage-recyclerview')
+    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+
+//    cameraX
+    def camerax_version = "1.2.0"
+
+    // CameraX核心库
+    implementation "androidx.camera:camera-core:$camerax_version"
+    // 相机视图库（可选）
+    implementation "androidx.camera:camera-view:$camerax_version"
+    // CameraX相机生命周期库（可选）
+    implementation "androidx.camera:camera-lifecycle:$camerax_version"
+    // CameraX相机扩展库（可选）
+    implementation "androidx.camera:camera-camera2:$camerax_version"
+
+    // google 扫码器
+    implementation 'com.google.android.gms:play-services-code-scanner:16.1.0'
+    // google mlkit 扫码，在 Google Play 服务中使用该模型，该方式在国内无法使用
+//    implementation 'com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.0'
+    // google mlkit 扫码，预先将模型绑定在项目中
+    implementation 'com.google.mlkit:barcode-scanning:17.2.0'
+    implementation 'androidx.camera:camera-mlkit-vision:1.4.0-alpha03'
+
+}
+
