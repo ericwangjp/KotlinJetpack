@@ -12,7 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp" />
 
-    <com.example.kotlinjetpack.view.MoveView
+    <com.example.kotlinjetpack.view.exercise.MoveView
         android:id="@+id/move_view"
         android:layout_width="100dp"
         android:layout_height="100dp"

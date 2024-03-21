@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.example.kotlinjetpack.view.nestScrollDemo.FoldNavScrollLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.kotlinjetpack.view.nestScroll.FoldNavScrollLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nested_parent_layout"
     android:layout_width="match_parent"
@@ -41,4 +41,4 @@
     </LinearLayout>
 
 
-</com.example.kotlinjetpack.view.nestScrollDemo.FoldNavScrollLayout>
+</com.example.kotlinjetpack.view.nestScroll.FoldNavScrollLayout>

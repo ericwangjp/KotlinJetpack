@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,5 +7,28 @@
     tools:context=".activity.FlowLearnListActivity">
 
 
+    <!--        <com.example.kotlinjetpack.view.exercise.GestureContainView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent" />-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    <com.example.kotlinjetpack.view.exercise.UnionView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+    <!--    <com.example.kotlinjetpack.view.exercise.SpiderView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+    <!--    <com.example.kotlinjetpack.view.exercise.CusTranslateView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+    <!--    <com.example.kotlinjetpack.view.exercise.CusCircleHeader-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+    <com.example.kotlinjetpack.view.exercise.ClipRgnView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

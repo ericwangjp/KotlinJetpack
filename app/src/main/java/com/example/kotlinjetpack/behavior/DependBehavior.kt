@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import com.example.kotlinjetpack.view.DependentView
+import com.example.kotlinjetpack.view.exercise.DependentView
 
 /**
  * desc: DependBehavior

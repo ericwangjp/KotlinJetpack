@@ -7,7 +7,7 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.os.bundleOf
-import com.example.kotlinjetpack.view.MoveView
+import com.example.kotlinjetpack.view.exercise.MoveView
 
 class MoveBehavior(val context: Context, attrs: AttributeSet) :
     CoordinatorLayout.Behavior<MoveView>(context, attrs) {

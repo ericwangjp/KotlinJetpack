@@ -7,8 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.coordinatorlayout.widget.CoordinatorLayout
-import androidx.core.os.bundleOf
-import com.example.kotlinjetpack.view.MoveView
+import com.example.kotlinjetpack.view.exercise.MoveView
 import kotlin.random.Random
 
 class ColorBehavior(val context: Context, attrs: AttributeSet) :
